@@ -1,5 +1,5 @@
 import '../App.scss'
-import React from "react";
+import React, {useEffect,useContext}from "react";
 import { Route, Redirect } from "react-router-dom";
 
 
@@ -11,8 +11,15 @@ import ExpandedRecipeCard from "./ExpandedRecipeCard";
 import AddRecipe from'./AddRecipe'
 import EditRecipe from './EditRecipe';
 import MiscShoppingList from './MiscShoppingList';
+import { RecipeContext, setRecipeContext} from './RecipeContext'
+import { RecipeProvider } from './RecipeContext'
 
 function App () {
+  // const [recipes, setRecipes] = useContext(RecipeContext)
+
+  // useEffect(() => {
+  //   setRecipes(recipes)
+  // },[])
   return (
     <> 
     <section class="hero is-primary">

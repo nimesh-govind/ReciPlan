@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { deleteRecipe } from '../utils'
+import { deleteCardRecipe } from '../utils'
 
 function RecipeCard ({ recipe }) {
     return (
@@ -31,7 +31,7 @@ function RecipeCard ({ recipe }) {
                       </p>
                       <p className="control">
                       <Link to='/recipes'>
-                      <button onClick={() => deleteRecipe(recipe)}className="button is-danger is-small is-rounded">
+                      <button onClick={() => deleteCardRecipe(recipe)}className="button is-danger is-small is-rounded">
                         <i className="fas fa-trash-alt"></i>
                         </button>
                       </Link>

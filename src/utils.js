@@ -82,14 +82,20 @@ export function assignRecipeToWeekDay (newWeekDayAssignment) { //USING THIS ONE
       })   
 }
 
-// export const deleteExpandedRecipe = (recipeId, props ) => {
-//   firebase
-//     .firestore()
-//     .collection('recipes')
-//     .doc(recipeId)
-//     .delete()
-//       props.history.push('/recipes')
-// }
+export function deleteCardRecipe (recipe) { // USING THIS ONE
+  if (window.confirm('Are you sure you want to delete this recipe?')){
+  firebase
+    .firestore()
+    .collection('recipes')
+    .doc(recipe.id)
+    .delete()
+    .then(firestoreRef => {
+      console.log("Recipe successfully deleted!", firestoreRef)
+      }).catch((error) => {
+          console.error("Error deleting recipe: ", error)
+      })
+    }
+}
 
 export function clearWeekDayAssignments () { //USING THIS ONE
   firebase

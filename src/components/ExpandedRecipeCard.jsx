@@ -2,25 +2,37 @@ import React, { useContext, useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
 import { SelectedDayContext } from './SelectedDayContext'
-import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay } from '../utils'
+import { WeekContext } from './WeekContext'
+import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
 
 function ExpandedRecipeCard (props) {
-console.log('props: ', props)
-
-  const [recipes, setRecipes] = useContext(RecipeContext)
+  const [recipes] = useContext(RecipeContext)
+  const [week, setWeek] = useContext(WeekContext)
   const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
   const [weekDay, setWeekDay] = useState(selectedDay)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
+  const assignedRecipe = recipes.find(x => x.id === week[weekDay])
 
   function clickHandler (evt) {
     evt.preventDefault() 
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
-    if (window.confirm('Would you like to add this recipe and ingredients to your week?')) {
-      assignRecipeToWeekDay(newWeekDayAssignment)
-      addIngredientsToList(recipe, recipeId)
-      props.history.push('/week')
+    if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
+      if (week[weekDay]) {
+        if (window.confirm(`${assignedRecipe.name} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)){
+          removeIngredientsFromList(week[weekDay])
+          assignRecipeToWeekDay(newWeekDayAssignment)
+          addIngredientsToList(recipe, recipeId)
+          setSelectedDay('monday')
+          props.history.push('/week')
+        }
+      } else {
+        assignRecipeToWeekDay(newWeekDayAssignment)
+        addIngredientsToList(recipe, recipeId)
+        setSelectedDay('monday')
+        props.history.push('/week')
+      }
     }
   }
 
@@ -38,7 +50,7 @@ console.log('props: ', props)
       <div className="card1">
           <div className="card-image">
             <figure className="image1 is-5by1">
-              <img src={recipe.imagePath} alt={recipe.name}/>
+              <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
               </figure>
           </div>
           <button>
@@ -56,11 +68,11 @@ console.log('props: ', props)
                 </figure>
               </div>
               <div className="media-content">
-                <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
+                <p className="title is-5">{recipe ? recipe.name : null}</p> {/* --- NAME OF RECIPE --- */}
               </div>
           </div>
           <label>Add Recipe To:</label>{' '}
-          <select value={selectedDay} onChange={changeHandler}>
+          <select value={weekDay} onChange={changeHandler}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>
@@ -71,20 +83,20 @@ console.log('props: ', props)
           </select>
               <button onClick={evt => clickHandler(evt)}>Confirm</button>
               <div className="content">
-                Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
-                Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
+                Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
+                Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
               </div>
               <div className="ingredients">
                 Ingredients needed:<br/><br/>
-                {recipe.ingredients && recipe.ingredients.map(ingredient => (
+                {recipe ? recipe.ingredients.map(ingredient => (
                   <p>{ingredient}</p>
-                ))}
+                )) : null}
               </div>
               <div className="Method">
               <br/>Method:<br/><br/>
-                {recipe.method && recipe.method.map(step => (
+                {recipe ? recipe.method.map(step => (
                   <p>{step}</p>
-                ))}
+                )) : null}
               </div>
           </div>
           

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WeekListItem ({ weekDay }) {
+const WeekListItem = ({ weekDay }) => {
   return (
     <div className="WeekListItem">
       <h4>WeekListItems</h4>

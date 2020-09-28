@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect } from 'react'
-
 import firebase from 'firebase/app'
 
 export const WeekContext = createContext()
@@ -14,10 +13,9 @@ export const WeekProvider = ({ children }) => {
     saturday: '',
     sunday: ''
   })
- 
 
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase
       .firestore()
       .collection('week')
       .onSnapshot(snapshot => {
@@ -28,8 +26,8 @@ export const WeekProvider = ({ children }) => {
         setWeek(newWeek[0])
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+    return () => unsubscribe()
+  }, [])
 
   return (
     <WeekContext.Provider value={[week, setWeek]}>

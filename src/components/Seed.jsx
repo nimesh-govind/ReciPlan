@@ -4,17 +4,17 @@ import firebase from 'firebase/app'
 
 import seedRecipes from '../data/seedData'
 
-export default function Seed () {
+const Seed = () => {
   function seedClickHandler () {
     firebase
-      .firestore()
-      .collection('recipes')
-      .add(seedRecipes[0])
-      .then(() => {
-        console.log("Recipe successfully added!")
-        }).catch((error) => {
-            console.error("Error adding recipe: ", error)
-        })
+    .firestore()
+    .collection('recipes')
+    .add(seedRecipes[0])
+    .then(() => {
+      console.log("Recipe successfully added!")
+      }).catch((error) => {
+          console.error("Error adding recipe: ", error)
+      })
 
     firebase
       .firestore()
@@ -108,3 +108,4 @@ export default function Seed () {
     </div>
   )
   }
+  export default Seed

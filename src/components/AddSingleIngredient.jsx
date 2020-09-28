@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-export default function MultipleFormTest () {
-  const [inputList, setInputList] = useState([{ newIngredient: "" }]);
+const AddSingleIngredient = () => {
+  const [inputList, setInputList] = useState([{ newIngredient: '' }])
 
-  // handle input change
   const handleInputChange = (evt, idx) => {
-    const { name, value } = evt.target;
-    const list = [...inputList];
-    list[idx][name] = value;
-    setInputList(list);
-  };
+    const { name, value } = evt.target
+    const list = [...inputList]
+    list[idx][name] = value
+    setInputList(list)
+  }
 
-  // handle click event of the Remove button
   const handleRemoveClick = idx => {
-    const list = [...inputList];
-    list.splice(idx, 1);
-    setInputList(list);
-  };
+    const list = [...inputList]
+    list.splice(idx, 1)
+    setInputList(list)
+  }
 
-  // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { newIngredient: "" }]);
-  };
+    setInputList([...inputList, { newIngredient: '' }])
+  }
 
   return (
     <div className="newIngredientField">
@@ -45,3 +42,5 @@ export default function MultipleFormTest () {
     </div>
   )
 }
+
+export default AddSingleIngredient

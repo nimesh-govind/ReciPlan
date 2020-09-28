@@ -1,14 +1,13 @@
 import React, { useState, createContext, useEffect } from 'react'
-
 import firebase from 'firebase/app'
 
 export const ShoppingListContext = createContext()
 
 export const ShoppingListProvider = ({ children }) => {
   const [shoppingList, setShoppingList] = useState([])
-  
+
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase
       .firestore()
       .collection('shoppingList')
       .onSnapshot(snapshot => {
@@ -19,8 +18,8 @@ export const ShoppingListProvider = ({ children }) => {
         setShoppingList(newShoppingList)
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+    return () => unsubscribe()
+  }, [])
 
   return (
     <ShoppingListContext.Provider value={[shoppingList, setShoppingList]}>

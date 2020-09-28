@@ -1,8 +1,7 @@
 import React from 'react'
-
 import RecipeList from './RecipesList'
 
-function Recipes () {
+const Recipes = () => {
   return (
     <div className="Recipes">
       <RecipeList />

@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect } from 'react'
-
 import firebase from 'firebase/app'
 
 export const RecipeContext = createContext()
@@ -8,7 +7,7 @@ export const RecipeProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase
       .firestore()
       .collection('recipes')
       .onSnapshot(snapshot => {
@@ -19,8 +18,8 @@ export const RecipeProvider = ({ children }) => {
         setRecipes(newRecipes)
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+    return () => unsubscribe()
+  }, [])
 
   return (
     <RecipeContext.Provider value={[recipes, setRecipes]}>

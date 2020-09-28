@@ -1,26 +1,26 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { RecipeContext } from './RecipeContext'
-import { SelectedDayContext } from './SelectedDayContext'
-import { WeekContext } from './WeekContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
+import { SelectedDayContext } from './SelectedDayContext'
+import { RecipeContext } from './RecipeContext'
+import { WeekContext } from './WeekContext'
 
-function ExpandedRecipeCard (props) {
+const ExpandedRecipeCard = (props) => {
   const [recipes] = useContext(RecipeContext)
-  const [week, setWeek] = useContext(WeekContext)
+  const [week] = useContext(WeekContext)
   const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
   const [weekDay, setWeekDay] = useState(selectedDay)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
   const assignedRecipe = recipes.find(x => x.id === week[weekDay])
 
-  function clickHandler (evt) {
-    evt.preventDefault() 
+  const clickHandler = (evt) => {
+    evt.preventDefault()
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
       if (week[weekDay]) {
-        if (window.confirm(`${assignedRecipe.name} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)){
+        if (window.confirm(`${assignedRecipe.name} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
           assignRecipeToWeekDay(newWeekDayAssignment)
           addIngredientsToList(recipe, recipeId)
@@ -36,40 +36,35 @@ function ExpandedRecipeCard (props) {
     }
   }
 
-  function changeHandler (evt) {
+  const changeHandler = (evt) => {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
 
-  useEffect(() => {
-    setRecipes(recipes)
-  },[])
-
   return (
     <>
       <div className="card1">
-          <div className="card-image">
-            <figure className="image1 is-5by1">
-              <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
-              </figure>
-          </div>
-          <button>
+        <div className="card-image">
+          <figure className="image1 is-5by1">
+            <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
+          </figure>
+        </div>
+        <button>
           <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
-          </button>
-          <button onClick={() => deleteRecipe(recipeId, props)}>
+        </button>
+        <button onClick={() => deleteRecipe(recipeId, props)}>
           Delete Recipe
-          </button>
-          {/* <button onClick={() => addIngredientsToList(recipe, recipeId)}>Add Ingredients To Shopping List</button> */}
-          <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
-          <div className="card-content">
-            <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                </figure>
-              </div>
-              <div className="media-content">
-                <p className="title is-5">{recipe ? recipe.name : null}</p> {/* --- NAME OF RECIPE --- */}
-              </div>
+        </button>
+        <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-left">
+              <figure className="image is-48x48">
+              </figure>
+            </div>
+            <div className="media-content">
+              <p className="title is-5">{recipe ? recipe.name : null}</p>
+            </div>
           </div>
           <label>Add Recipe To:</label>{' '}
           <select value={weekDay} onChange={changeHandler}>
@@ -81,25 +76,24 @@ function ExpandedRecipeCard (props) {
             <option value='saturday'>Saturday</option>
             <option value='sunday'>Sunday</option>
           </select>
-              <button onClick={evt => clickHandler(evt)}>Confirm</button>
-              <div className="content">
-                Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
-                Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
-              </div>
-              <div className="ingredients">
-                Ingredients needed:<br/><br/>
-                {recipe ? recipe.ingredients.map(ingredient => (
-                  <p>{ingredient}</p>
-                )) : null}
-              </div>
-              <div className="Method">
-              <br/>Method:<br/><br/>
-                {recipe ? recipe.method.map(step => (
-                  <p>{step}</p>
-                )) : null}
-              </div>
+          <button onClick={evt => clickHandler(evt)}>Confirm</button>
+          <div className="content">
+                Serves: {recipe ? recipe.serves : null} <br/>
+                Prep time: {recipe ? recipe.prepTime : null}
           </div>
-          
+          <div className="ingredients">
+                Ingredients needed:<br/><br/>
+            {recipe ? recipe.ingredients.map(ingredient => (
+              <p>{ingredient}</p>
+            )) : null}
+          </div>
+          <div className="Method">
+            <br/>Method:<br/><br/>
+            {recipe ? recipe.method.map((step, key) => (
+              <p>{step}</p>
+            )) : null}
+          </div>
+        </div>
       </div>
     </>
   )

@@ -128,7 +128,7 @@ html, body {
 }
 
 .weeklist {
-  padding-top: 6rem;
+  // padding-top: 6rem;
 }
 
 .hrspacing {
@@ -160,3 +160,24 @@ html, body {
 //   margin-left: 2rem;
 
 // }
+
+.noBulma {
+  z-index: 1;
+  // top: 0;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  // padding-bottom: 10px;
+  height: 80px;
+  width: 100vw
+}
+
+.noBulmaLogo {
+  width: auto;
+  height: 50px
+}

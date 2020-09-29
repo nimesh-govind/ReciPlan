@@ -42,9 +42,7 @@ function App () {
       </div>
     </> ||
     <> 
-      <div className="logo">
-        <img src="../rp.png" alt="Logo"/>
-      </div>
+
         <div className="contentRoutes">
           <Route path="/" component={Nav} />
           <Route path='/' component={SignOut} /> 

@@ -30,15 +30,12 @@ function WeekList () {
 
   return (
     <>
-    <section className="hero">
-  <div className="hero-body">
-    <div className="container">
-      <h1 className="title is-4">
-        Weekly Planner
-      </h1>
+    <div className='noBulma'>
+        <img className="noBulmaLogo" src="../rp.png" alt="Logo"/>
+      <div className='noBulmaTitle'>Week Planner</div>
+      <div className='noBulmaSignOut'>Sign Out</div>
     </div>
-  </div>
-</section>
+
     <div>
       <div>
         <hr />

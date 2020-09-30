@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Link } from 'react-router-dom'
-
+import {removeCardFromWeek} from '../utils'
 export default function WeekCard ({ recipe }) {
   const styles = {
     backgroundImage: `url(${recipe.imagePath})`,
@@ -10,6 +10,7 @@ export default function WeekCard ({ recipe }) {
     backgroundRepeat: 'no-repeat',
     height: '100px'
   }
+   console.log('recipe : ', recipe)
     return (
       <>
       <div className="box">
@@ -26,8 +27,10 @@ export default function WeekCard ({ recipe }) {
               <p>
                 <strong className="subtitle">{recipe.name}</strong>
                 <br />
-                
               </p>
+              <span className='minusButton'>
+              {/* <i onClick={() => removeCardFromWeek(re)}class="fas fa-minus"></i> */}
+              </span>
             </div>
             <nav className="level is-mobile">
             <div className="level-left">

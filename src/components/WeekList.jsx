@@ -27,7 +27,7 @@ export default function WeekList () {
     clearWeekDayAssignments(user.uid)
     clearShoppingList(user.uid)
   }
-
+// console.log('weekcontext: ', week)
   return (
     <>
 
@@ -38,39 +38,39 @@ export default function WeekList () {
         <button onClick={() => clickHandler()}>Clear Week Assignments</button> {/* --- NIMZ STYLE PLUZ --- */}
           <div>
         {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<div className="hrspcing"><hr /></div></h1></div> : null}
-        {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>
+        {mondayRecipe ? <WeekCard id={user.uid} recipe={mondayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('monday')}>Monday+<hr /></h3></div>
         </Link>}
         </div>
 
         {tuesdayRecipe ? <div className="list"><h1 className="subtitle is-5">Tuesday<hr /></h1></div> : null}
-        {tuesdayRecipe ? <WeekCard recipe={tuesdayRecipe} /> : <Link to='/recipes'>
+        {tuesdayRecipe ? <WeekCard id={user.uid} recipe={tuesdayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5" onClick={() => setSelectedDay('tuesday')}>Tuesday+<hr /></h3></div>
         </Link>}
     
         {wednesdayRecipe ? <div className="list"><h1 className="subtitle is-5">Wednesday<hr /></h1></div> : null}
-        {wednesdayRecipe ? <WeekCard recipe={wednesdayRecipe} /> : <Link to='/recipes'>
+        {wednesdayRecipe ? <WeekCard id={user.uid} recipe={wednesdayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('wednesday')}>Wednesday+<hr /></h3></div>
         </Link>}
         
         {thursdayRecipe ?  <div className="list"><h1 className="subtitle is-5">Thursday<hr /></h1></div> : null}
-        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : <Link to='/recipes'>
+        {thursdayRecipe ? <WeekCard id={user.uid} recipe={thursdayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5" onClick={() => setSelectedDay('thursday')}>Thursday+<hr /></h3></div>
         </Link>}
         
         
         {fridayRecipe ? <div className="list"><h1 className="subtitle is-5">Friday<hr /></h1></div> : null}
-        {fridayRecipe ? <WeekCard recipe={fridayRecipe} /> : <Link to='/recipes'>
+        {fridayRecipe ? <WeekCard id={user.uid} recipe={fridayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('friday')}>Friday+<hr /></h3></div>
         </Link>}
         
         {saturdayRecipe ? <div className="list"><h1 className="subtitle is-5">Saturday<hr /></h1></div> : null}
-        {saturdayRecipe ? <WeekCard recipe={saturdayRecipe} /> : <Link to='/recipes'>
+        {saturdayRecipe ? <WeekCard id={user.uid} recipe={saturdayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('saturday')}>Saturday+<hr /></h3></div>
         </Link>}
         
         {sundayRecipe ? <div className="list"><h1 className="subtitle is-5">Sunday<hr /></h1></div> : null}
-        {sundayRecipe ? <WeekCard recipe={sundayRecipe} /> : <Link to='/recipes'>
+        {sundayRecipe ? <WeekCard id={user.uid} recipe={sundayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('sunday')}>Sunday+</h3></div>
         </Link>}
         </div>

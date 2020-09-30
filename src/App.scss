@@ -491,10 +491,11 @@ html, :focus {
   margin-top: 1rem;
 }
 
-.tasty {
-  position: relative;
-  bottom: 18rem;
-  left: 6rem;
+.loginButton{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
   z-index: 1;
 }
 
@@ -506,6 +507,7 @@ html, :focus {
 .minusButton {
   margin-left: 10rem;
   color: black;
+  z-index: 1;
 }
 
 .googleLogin {

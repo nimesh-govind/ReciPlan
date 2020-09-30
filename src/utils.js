@@ -26,14 +26,14 @@ export const deleteRecipe = (recipeId, props) => { // USING THIS ONE
   props.history.push('/recipes')
 }
 
-export function removeCardFromWeek (userId, weekday) { // USING THIS ONE
+export function removeCardFromWeek (userId, correct) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
     .doc(userId)
-    .delete(weekday)
+    .delete()
     .then(firestoreRef => {
-      console.log('Recipe successfully removed!', weekday)
+      console.log('Recipe successfully removed!')
     }).catch((error) => {
       console.error('Error assigning recipe: ', error)
     })

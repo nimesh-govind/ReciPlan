@@ -22,7 +22,7 @@ show.state ? setShow({state: false, home: {visibility: 'visible'}, button: {visi
     <br/>
     <div className='welcomeButton'style={show.home}>
     <Home/>
-    <div className='tasty' style={show.button}>
+    <div className='loginButton' style={show.button}>
     <button onClick={() => showHome()}className="button is-outlined is-dark">Start Planning</button>
     </div>
     </div>

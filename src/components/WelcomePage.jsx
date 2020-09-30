@@ -17,9 +17,9 @@ export default function WelcomePage () {
     </div>
     <br/>
     <div className='welcomeButton'>
-      <Link to='/home' >
+    
     <button className="button is-outlined">Start Planning</button>
-    </Link> 
+   
     </div>
     </div>
     </div>

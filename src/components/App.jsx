@@ -11,7 +11,7 @@ import AddRecipe from './AddRecipe'
 import EditRecipe from './EditRecipe'
 import { UserContext } from './context/UserContext'
 
-import Home from './Home'
+import LoginRegister from './LoginRegister'
 import SignUp from './SignUp'
 import SignOut from './SignOut'
 import Header from './Header'
@@ -56,7 +56,7 @@ function App () {
     } else {
       return (
         <div className="contentRoutes">
-          <Route path='/home' component={Home} />
+          <Route path='/home' component={LoginRegister} />
           <Route path='/sign-up' component={SignUp} />
           <Route exact path='/'><Redirect to='/welcome'/></Route>
           <Route exact path='/welcome' component={WelcomePage}/>

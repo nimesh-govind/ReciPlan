@@ -59,9 +59,6 @@ const googleClickHandler = () => {
 
   return (
     <div>
-      <div className="logologin">
-        <img src="../rp.png" alt="Logo"/>
-    </div>
       {/* <form>
         <label>Email</label><br></br>
         <input type='text' value={email} onChange={e => setEmail(e.target.value)}></input><br></br>

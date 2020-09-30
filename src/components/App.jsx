@@ -16,6 +16,7 @@ import SignUp from './SignUp'
 import SignOut from './SignOut'
 import Header from './Header'
 import HeaderCopy from './HeaderCopy'
+import WelcomePage from './WelcomePage'
 
 function App () {
   const {user} = useContext(UserContext)
@@ -37,8 +38,9 @@ function App () {
           <Route path="/" component={Nav} />
           <Route path='/' component={HeaderCopy} />
             <Route path='/' component={SignOut} /> 
-            <Route exact path='/'><Redirect to='/recipes'/></Route>
-            <Route exact path='/home'><Redirect to='recipes'/></Route>
+            {/* <Route exact path='/'><Redirect to='/recipes'/></Route> */}
+            {/* <Route exact path='/home'><Redirect to='recipes'/></Route> */}
+            <Route exact path='/welcome' component={WelcomePage}/>
             {/* <Route path='/recipes' component={HeaderCopy} /> */}
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
@@ -57,8 +59,10 @@ function App () {
         <div className="contentRoutes">
           <Route path='/home' component={Home} />
           <Route path='/sign-up' component={SignUp} />
-          <Route exact path='/'><Redirect to='/home'/></Route>
-          <Route exact path='/recipes'><Redirect to='/home'/></Route>
+          {/* <Route exact path='/'><Redirect to='/home'/></Route> */}
+          <Route exact path='/welcome' component={WelcomePage}/>
+
+          {/* <Route exact path='/recipes'><Redirect to='/home'/></Route> */}
           <Route exact path="/recipes/add"><Redirect to='/home'/></Route>
           <Route exact path="/recipe/:id"><Redirect to='/home'/></Route>
           <Route exact path='/week'><Redirect to='/home'/></Route>

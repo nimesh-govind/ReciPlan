@@ -82,11 +82,11 @@ export default function Home (props) {
     </button></div>
 
     </div>
-    <span className='socials'>
-    <i onClick={() => facebookClickHandler()} class="fab fa-facebook-square fa-2x"></i>
-    <span style={{visibility:'hidden'}}>---</span>
-    <i onClick={() => googleClickHandler()} class="fab fa-google-plus-square fa-2x"></i>
-    </span>
+    <img onClick={() => facebookClickHandler()} className='facebookLogin' src='/facebook.png'></img><br></br>
+    <img onClick={() => googleClickHandler()} className='googleLogin' src='/google.png'></img><br></br>
+
+    {/* <button onClick={() => facebookClickHandler()}>Log in/register with Facebook</button> */}
+    {/* <button onClick={() => googleClickHandler()}>Log in/register with Google</button> */}
 
     {error === 'auth/user-not-found' ? <div>User not found, please register!</div> : null}
     {error === 'auth/invalid-email' ? <div>Please use a real email.</div> : null}

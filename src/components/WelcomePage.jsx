@@ -13,7 +13,7 @@ export default function WelcomePage () {
     </div>
     <br/>
     <div className='words'>
-    Your recipes, Your week
+    "Your recipes, Your week"
     </div>
     <br/>
     <div className='welcomeButton'>

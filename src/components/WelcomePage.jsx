@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 export default function WelcomePage () {
     return (
         <>
@@ -16,8 +16,10 @@ export default function WelcomePage () {
     Your recipes, Your week
     </div>
     <br/>
-    <div>
-    <button>Yes i am over 18</button> <button>No I am not</button>
+    <div className='welcomeButton'>
+      <Link to='/home' >
+    <button className="button is-outlined">Start Planning</button>
+    </Link> 
     </div>
     </div>
     </div>

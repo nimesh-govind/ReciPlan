@@ -475,6 +475,7 @@ html, :focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Doppio One', sans-serif;
 }
 
 .welcomeContainer {
@@ -483,6 +484,11 @@ html, :focus {
 }
 
 .words {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeButton {
   display: flex;
   justify-content: center;
   align-items: center;

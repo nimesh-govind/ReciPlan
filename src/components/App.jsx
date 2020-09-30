@@ -38,17 +38,17 @@ function App () {
           <Route path="/" component={Nav} />
           <Route path='/' component={HeaderCopy} />
             <Route path='/' component={SignOut} /> 
-            {/* <Route exact path='/'><Redirect to='/recipes'/></Route> */}
-            {/* <Route exact path='/home'><Redirect to='recipes'/></Route> */}
+            <Route exact path='/'><Redirect to='/recipes'/></Route> 
+            <Route exact path='/home'><Redirect to='recipes'/></Route>
             <Route exact path='/welcome' component={WelcomePage}/>
-            {/* <Route path='/recipes' component={HeaderCopy} /> */}
+            <Route path='/recipes' component={HeaderCopy} />
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
             <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
             <Route exact path="/recipe/edit/:id" component={EditRecipe} />
-            {/* <Route path='/week' component={HeaderCopy} /> */}
+            <Route path='/week' component={HeaderCopy} />
             <Route exact path="/week" component={Week} />
-            {/* <Route path='/shopping' component={HeaderCopy} /> */}
+            <Route path='/shopping' component={HeaderCopy} />
             <Route exact path="/shopping" component={Shopping} />
             <Route exact path="/shopping/add" component={Shopping} />
           </div>
@@ -59,15 +59,14 @@ function App () {
         <div className="contentRoutes">
           <Route path='/home' component={Home} />
           <Route path='/sign-up' component={SignUp} />
-          {/* <Route exact path='/'><Redirect to='/home'/></Route> */}
+          <Route exact path='/'><Redirect to='/welcome'/></Route>
           <Route exact path='/welcome' component={WelcomePage}/>
-
-          {/* <Route exact path='/recipes'><Redirect to='/home'/></Route> */}
-          <Route exact path="/recipes/add"><Redirect to='/home'/></Route>
-          <Route exact path="/recipe/:id"><Redirect to='/home'/></Route>
-          <Route exact path='/week'><Redirect to='/home'/></Route>
-          <Route exact path='/shopping'><Redirect to='/home'/></Route>
-          <Route exact path="/shopping/add"><Redirect to='/home'/></Route>
+          <Route exact path='/recipes'><Redirect to='/welcome'/></Route>
+          <Route exact path="/recipes/add"><Redirect to='/welcome'/></Route>
+          <Route exact path="/recipe/:id"><Redirect to='/welcome'/></Route>
+          <Route exact path='/week'><Redirect to='/welcome'/></Route>
+          <Route exact path='/shopping'><Redirect to='/welcome'/></Route>
+          <Route exact path="/shopping/add"><Redirect to='/welcome'/></Route>
       </div>
       )
     }

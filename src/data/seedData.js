@@ -72,6 +72,56 @@ const seedRecipes = [
       'Put the cooked quinoa in a serving bowl, add the chopped salad ingredients and your falafel. Top with your favourite dressing and serve warm.'
     ],
     imagePath: 'https://realfood.tesco.com/media/images/RFO-1400x919-Falafel-a3ec16e4-e945-49b2-9003-fab7b3673824-0-1400x919.jpg'
+  },
+
+  {
+    name: 'Roast Chicken With Couscous',
+    serves: 3,
+    prepTime: 90,
+    ingredients: [
+      {quantity: '1.6 kilograms', name: 'chicken'},
+      {quantity: '1', name: 'lemon'},
+      {quantity: '2', name: 'red onions'},
+      {quantity: '2', name: 'carrots'},
+      {quantity: '1 tsp', name: 'ground cumin'},
+      {quantity: '200g', name: 'roasted red peppers, drained},
+      {quantity: '250g', name: 'couscous}
+    ],
+    method: [
+      'It’s best to use a nice free-range or organic chicken for this dish, or the best-quality bird you can afford; and I love the idea of the tasty vegetables in this recipe getting a whole lot of love. If you like, a mint sauce would make a great accompaniment. Pretty delish!', '2. Preheat the oven to 200°C. Place the chicken on a board and make some deep crisscross slashes into the legs – this will help the spices to penetrate the meat, and will also help it to cook more quickly. Halve the lemon and place inside the chicken, then rub the chicken skin all over with olive oil, a little sea salt, pepper and the cumin. Transfer the chicken to a roasting tray and place in the hot oven.',
+      'Peel and quarter the onions and carrots. When the chicken’s been cooking for around 15 minutes, reduce the heat to 180°C and add the onions and carrots to the tray. Roast for a further hour, or until golden and cooked through – the chicken is cooked when the thigh meat pulls easily away from the bone and the juices run clear.',
+      'Once perfectly cooked, carefully lift the chicken onto a plate or board and cover with tin foil and a couple of tea towels to keep warm. Spoon the vegetables onto a board and roughly chop them, then tip back into the tray and place on a medium heat. Pour in 500ml boiling water and stir well, making sure you scrape up all the lovely sticky goodness from the bottom of the tray.',
+      'Drain and roughly chop the peppers, then add them to the tray with the smoked paprika, ground coriander and the couscous. Pull the lemon halves out of the chicken with a pair of tongs and squeeze the juices into the tray (making sure to catch any pips). Bring to the boil, then turn the heat off and leave to rest for 5 minutes, or until the couscous has absorbed all of the water. Meanwhile, pick and finely chop the mint leaves. When the time’s up, fluff up the couscous using a fork and stir through the chopped mint. Drizzle with a good lug of extra virgin olive oil and everything together.', '6. Cut the chicken up into joints, removing the skin if you want to keep it healthy, then serve with the tasty roast-vegetable couscous. Enjoy!', '7. Nims Tip: Basting a chicken as it cooks helps to stop it drying out, giving you lovely, juicy meat. Check on the chicken every 20 to 30 minutes, and spoon any juices from the bottom of the tray back over the bird.'
+    ],
+    imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/797_1_1436881994.jpg?tr=w-800,h-1066'
+  },
+
+  {
+    name: 'Saag Paneer',
+    serves: 4,
+    prepTime: 60,
+    ingredients: [
+      {quantity: '2 cloves', name: 'garlic'},
+      {quantity: '5cm', name: 'ginger'},
+      {quantity: '1', name: 'onion'},
+      {quantity: '1', name: 'ripe tomato'},
+      {quantity: '1 tsp', name: 'cumin seeds'},
+      {quantity: '2 tsp', name: 'garam masala'},
+      {quantity: '1 tsp', name: 'turmeric'},
+      {quantity: '600g', name: 'frozen spinach'},
+      {quantity: '50 ml', name: 'cream'},
+      {quantity: '250g', name: 'paneer'},
+    ],
+    method: [
+      'Drizzle a lug of oil into a large non-stick frying pan over a medium heat, add the paneer and fry for 5 minutes, or until golden, stirring frequently. Using a slotted spoon, transfer to a double layer of kitchen paper to drain.',
+      'Peel and finely chop the onion, garlic and ginger.',
+      'Return the pan to a medium-low heat, adding a splash more oil, if needed. Add the cumin seeds, fry for 1 minute, then add the onion and cook for around 8 minutes, or until softened.',
+      'Stir in the garlic, ginger, garam masala and turmeric. Halve, deseed and very finely chop the tomato, add to the pan and cook for a further 10 minutes, or until softened but not coloured, stirring occasionally.'
+      'Stir in the frozen spinach, cover and cook for 5 minutes, then stir in the cream, paneer and a splash of boiling water.'
+      'Reduce the heat to low and cook for a further 5 minutes with the lid off, or until reduced to a deliciously creamy consistency. Season to taste with sea salt and black pepper and serve immediately.'
+    ],
+    imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1443_1_1436884145.jpg?tr=w-800,h-1066https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/797_1_1436881994.jpg?tr=w-800,h-1066'
+
   }
 
 
@@ -93,32 +143,7 @@ const seedRecipes = [
   //   ],
   //   imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/83911434.jpg?tr=w-800,h-1066'
   // },
-  // {
-  //   name: 'Roast Chicken With Couscous',
-  //   serves: 'Aliens',
-  //   prepTime: '90 Minutes',
-  //   ingredients: [
-  //     '1.6 kilograms chicken ',
-  //     '1 lemon',
-  //     '2 red onions',
-  //     '2 carrots',
-  //     '3 sprigs fresh mint leaves',
-  //     'olive oil',
-  //     '1 teaspoon ground cumin',
-  //     '200 grams roasted red peppers, drained',
-  //     '1 teaspoon smoked paprika',
-  //     '1 tablespoon ground coriander',
-  //     '250 grams couscous',
-  //     'extra-virgin olive oil'
-  //   ],
-  //   method: [
-  //     '1. It’s best to use a nice free-range or organic chicken for this dish, or the best-quality bird you can afford; and I love the idea of the tasty vegetables in this recipe getting a whole lot of love. If you like, a mint sauce would make a great accompaniment. Pretty delish!', '2. Preheat the oven to 200°C. Place the chicken on a board and make some deep crisscross slashes into the legs – this will help the spices to penetrate the meat, and will also help it to cook more quickly. Halve the lemon and place inside the chicken, then rub the chicken skin all over with olive oil, a little sea salt, pepper and the cumin. Transfer the chicken to a roasting tray and place in the hot oven.',
-  //     '3. Peel and quarter the onions and carrots. When the chicken’s been cooking for around 15 minutes, reduce the heat to 180°C and add the onions and carrots to the tray. Roast for a further hour, or until golden and cooked through – the chicken is cooked when the thigh meat pulls easily away from the bone and the juices run clear.',
-  //     '4. Once perfectly cooked, carefully lift the chicken onto a plate or board and cover with tin foil and a couple of tea towels to keep warm. Spoon the vegetables onto a board and roughly chop them, then tip back into the tray and place on a medium heat. Pour in 500ml boiling water and stir well, making sure you scrape up all the lovely sticky goodness from the bottom of the tray.',
-  //     '5. Drain and roughly chop the peppers, then add them to the tray with the smoked paprika, ground coriander and the couscous. Pull the lemon halves out of the chicken with a pair of tongs and squeeze the juices into the tray (making sure to catch any pips). Bring to the boil, then turn the heat off and leave to rest for 5 minutes, or until the couscous has absorbed all of the water. Meanwhile, pick and finely chop the mint leaves. When the time’s up, fluff up the couscous using a fork and stir through the chopped mint. Drizzle with a good lug of extra virgin olive oil and everything together.', '6. Cut the chicken up into joints, removing the skin if you want to keep it healthy, then serve with the tasty roast-vegetable couscous. Enjoy!', '7. Nims Tip: Basting a chicken as it cooks helps to stop it drying out, giving you lovely, juicy meat. Check on the chicken every 20 to 30 minutes, and spoon any juices from the bottom of the tray back over the bird.'
-  //   ],
-  //   imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/797_1_1436881994.jpg?tr=w-800,h-1066'
-  // }
+  
   // {
   //   name: 'Takeout Dinner Woohoo!',
   //   serves: 'the whole family!',

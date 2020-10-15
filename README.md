@@ -33,7 +33,7 @@ https://whimsical.com/7BzgfjZhaQyLPePAZziRqm
 
 ## Install
 
-To install dependencies
+To install project dependencies
 ``
 npm install
 ``

@@ -23,17 +23,24 @@ https://whimsical.com/7BzgfjZhaQyLPePAZziRqm
 
 ![Alt text](https://github.com/pohutukawa-2020/dream/blob/master/docs/DreamTimetable.png?raw=true "Title")
 
+## Contributors
+
+* Matt Silver
+* Michael Rua
+* Aira Jones 
+* Kyle Watson
+* Nimesh Govind
+
 ## Install
 
 To install dependencies
 ``
 npm install
-```
+``
 
 To run on local server http://localhost:3000/
 ``
-
 npm start
-```
+``
 
 ## ReciPlan is currently live at www.reciplan.co.nz

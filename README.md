@@ -31,6 +31,11 @@ https://whimsical.com/7BzgfjZhaQyLPePAZziRqm
 * Kyle Watson
 * Nimesh Govind
 
+## Presentation Slides
+
+You can view the presentation at the below link:
+* https://drive.google.com/file/d/1daiADmx9W1v0pT3vFf24wD5nrsRQRFg4/view?usp=sharing
+
 ## Install
 
 To install project dependencies
